@@ -2,7 +2,7 @@ import React from "react";
 import type { Task } from "../types/Tasks";
 import "../styles/Task.css";
 import { CgClose, CgInfo } from "react-icons/cg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // antes era useHistory
 
 type TaskProps = {
   task: Task; // Aqui chama aquele task minúsculo...
@@ -15,10 +15,10 @@ const TaskInfo: React.FC<TaskProps> = ({
   handleTaskClick,
   handleDeleteTask,
 }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // agora funciona desta forma a questão de rotas
 
   const handleTaskDetailsClick = (taskTitle: string) => {
-    navigate(`/${taskTitle}`);
+    navigate(`/${taskTitle}`); // bem mais simples
   };
   return (
     <div
